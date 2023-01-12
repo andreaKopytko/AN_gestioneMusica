@@ -1,0 +1,28 @@
+<body>
+  <label for="musicaSearch">Inserisci filtro </label>
+  <input id="musicaSearch" />
+  <h4>Filtrato per</h4>
+  <button (click)="mostraImmagine()">Mostra Immagini</button>
+  <hr />
+  <table style="width: 100%">
+    <tr>
+      <td><strong>Autore</strong></td>
+      <td><strong>Titolo</strong></td>
+      <td><strong>Prezzo</strong></td>
+      <td><strong>immagine</strong></td>
+    </tr>
+    <tr *ngFor="let m of musica">
+      <td>{{ m.autore }}</td>
+      <td>{{ m.titolo }}</td>
+      <td>€{{ m.prezzo }},00</td>
+      <td>
+        <img
+          *ngIf="immagineVisibile"
+          [src]="m.immagine"
+          height="50"
+          width="100"
+        />
+      </td>
+    </tr>
+  </table>
+</body>
